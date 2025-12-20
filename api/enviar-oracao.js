@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         service_id: SERVICE_ID,
         template_id: TEMPLATE_ID,
-        user_id: USER_ID,
+        publicKey: USER_ID,
         template_params: {
           from_name: name,
           from_email: email,
