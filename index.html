@@ -1339,6 +1339,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     </script>
+<script>
+  document.getElementById('prayer-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const pedido = document.getElementById('pedido').value;
+    const successMsg = document.getElementById('success-message');
+
+    try {
+      const res = await fetch('/api/enviar-oracao', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, pedido })
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        successMsg.classList.add('show');
+        successMsg.textContent = '✅ Recebemos seu pedido! Estamos rezando por você. 🙏';
+        this.reset();
+      } else {
+        successMsg.classList.add('show');
+        successMsg.style.background = '#f8d7da';
+        successMsg.style.color = '#721c24';
+        successMsg.textContent = '❌ Erro ao enviar. Tente novamente.';
+      }
+    } catch (err) {
+      console.error(err);
+      successMsg.classList.add('show');
+      successMsg.style.background = '#f8d7da';
+      successMsg.style.color = '#721c24';
+      successMsg.textContent = '❌ Erro interno. Tente novamente.';
+    }
+  });
+</script>
 
 </body>
 </html>
