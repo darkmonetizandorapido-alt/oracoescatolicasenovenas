@@ -28,15 +28,16 @@ module.exports = async (req, res) => {
         const emailjs_url = 'https://api.emailjs.com/api/v1.0/email/send';
         
         const payload = {
-            service_id: SERVICE_ID,
-            template_id: TEMPLATE_ID,
-            user_id: USER_ID,
-            template_params: {
-                from_name: name,
-                from_email: email,
-                message: pedido,
-            }
-        };
+    service_id: SERVICE_ID,
+    template_id: TEMPLATE_ID,
+    public_key: USER_ID, // 👈 MUITO IMPORTANTE
+    template_params: {
+        from_name: name,
+        from_email: email,
+        message: pedido
+    }
+};
+
 
         const response = await fetch(emailjs_url, {
             method: 'POST',
