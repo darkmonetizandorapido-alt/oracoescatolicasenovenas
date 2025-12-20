@@ -22,15 +22,15 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        service_id: SERVICE_ID,
-        template_id: TEMPLATE_ID,
-        publicKey: USER_ID,
-        template_params: {
-          from_name: name,
-          from_email: email,
-          message: pedido
-        }
-      })
+  service_id: SERVICE_ID,
+  template_id: TEMPLATE_ID,
+  publicKey: USER_ID,
+  template_params: {
+    name: name,
+    email: email,
+    pedido: pedido
+  }
+})
     });
 
     if (!response.ok) {
