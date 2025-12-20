@@ -1,0 +1,1 @@
+{"name": "siteoracao-serverless", "version": "1.0.0", "description": "Serverless functions for siteoracao", "main": "api/youtube.js", "scripts": {"test": "echo \"Error: no test specified\" && exit 1"}, "dependencies": {"node-fetch": "^2.6.1"}}
