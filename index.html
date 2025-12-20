@@ -401,7 +401,7 @@
         }
 
         #minuto-sabedoria {
-            scroll-margin-top: 200px; /* ajuste fino se quiser */
+            scroll-margin-top: 250px; /* ajuste fino se quiser */
         }
 
         @media (max-width: 768px) {
@@ -600,13 +600,6 @@
                     🐦 Twitter
                 </a>
                 
-                <a href="https://www.youtube.com/@Ora%C3%A7%C3%B5esCat%C3%B3licasENovenas" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="share-btn" 
-                   style="background:#FF0000;">
-                    📺 Canal YouTube
-                </a>
             </div>
         </section>
 
@@ -618,9 +611,76 @@
 
         <section class="videos-section">
             <h2>📹 Nossos Vídeos de Orações Católicas e Novenas</h2>
-            <div class="videos-grid" id="videos-container">
-                <p style="text-align: center; color: #999;">Carregando vídeos...</p>
-            </div>
+            <div class="videos-grid">
+
+  <div class="video-card">
+    <iframe
+      src="https://www.youtube.com/embed/vhSYYnaazzk"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+    <div class="video-card-content">
+      <h3>Oração poderosa de São Bento</h3>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <iframe
+      src="https://www.youtube.com/embed/SEU_VIDEO_ID_2"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+    <div class="video-card-content">
+      <h3>Novena de São Bento</h3>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <iframe
+      src="https://www.youtube.com/embed/SEU_VIDEO_ID_3"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+    <div class="video-card-content">
+      <h3>Terço poderoso de hoje</h3>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <iframe
+      src="https://www.youtube.com/embed/vhSYYnaazzk"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+    <div class="video-card-content">
+      <h3>Oração poderosa de São Bento</h3>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <iframe
+      src="https://www.youtube.com/embed/SEU_VIDEO_ID_2"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+    <div class="video-card-content">
+      <h3>Novena de São Bento</h3>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <iframe
+      src="https://www.youtube.com/embed/SEU_VIDEO_ID_3"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+    <div class="video-card-content">
+      <h3>Terço poderoso de hoje</h3>
+    </div>
+  </div>
+
+</div>
+
         </section>
 
         <section class="prayer-form-section">
@@ -905,72 +965,6 @@
         }
 
         // ========================================
-        // FUNÇÃO: CARREGAR VÍDEOS DO YOUTUBE
-        // ========================================
-        async function carregarVideos() {
-            const videosContainer = document.getElementById('videos-container');
-            if (!videosContainer) return;
-            
-            try {
-                const response = await fetch('/api/youtube');
-                
-                if (!response.ok) {
-                    throw new Error(`Erro HTTP: ${response.status}`);
-                }
-                
-                const data = await response.json();
-                
-                if (data.error) {
-                    throw new Error(data.error);
-                }
-                
-                const videos = data.items || [];
-                
-                if (videos.length === 0) {
-                    videosContainer.innerHTML = '<p style="text-align: center; color: #999;">Nenhum vídeo encontrado no momento.</p>';
-                    return;
-                }
-                
-                videosContainer.innerHTML = '';
-                
-                videos.slice(0, 6).forEach(video => {
-                    const videoId = video.id.videoId;
-                    const titulo = video.snippet.title;
-                    
-                    const card = document.createElement('div');
-                    card.className = 'video-card';
-                    card.innerHTML = `
-                        <iframe 
-                            src="https://www.youtube.com/embed/${videoId}" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            loading="lazy"
-                            title="${titulo}">
-                        </iframe>
-                        <div class="video-card-content">
-                            <h3>${titulo}</h3>
-                        </div>
-                    `;
-                    videosContainer.appendChild(card);
-                });
-                
-            } catch (error) {
-                console.error('Erro ao carregar vídeos:', error);
-                videosContainer.innerHTML = `
-                    <p style="text-align: center; color: #ff0000;">
-                        ⚠️ Não foi possível carregar os vídeos no momento. 
-                        <a href="https://www.youtube.com/@Ora%C3%A7%C3%B5esCat%C3%B3licasENovenas" 
-                           target="_blank" 
-                           style="color: #1e3c72; text-decoration: underline;">
-                            Visite nosso canal no YouTube
-                        </a>
-                    </p>
-                `;
-            }
-        }
-
-        // ========================================
         // FUNÇÃO: ENVIAR FORMULÁRIO VIA EMAILJS
         // ========================================
         async function enviarFormulario(e) {
@@ -1081,7 +1075,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carrega conteúdo da página
     carregarVersiculoDoDia();
     carregarTestemunhos();
-    carregarVideos();
     
     // Configura o formulário de oração
     const form = document.getElementById('prayer-form');
