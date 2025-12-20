@@ -430,20 +430,20 @@
 </head>
 <body>
     <header>
-        <h1>🙏 Orações Católicas e Novenas - Palavra de Deus</h1>
-        <p>Fortaleça sua fé em Jesus Cristo com orações poderosas da Bíblia Sagrada</p>
-        
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="oracoes.html">Orações</a>
-            <a href="novena.html">Novena</a>
-            <a href="testemunhos.html">Testemunhos</a>
-            <a href="politica-de-privacidade.html">Privacidade</a>
-            <a href="termos-de-uso.html">Termos</a>
-            <a href="contato.html">Contato</a>
-        </nav>
-    </header>
+    <h1>🙏 Orações Católicas Poderosas e Novenas | Palavra de Deus e Fé em Jesus Cristo</h1>
+    <p>Fortaleça sua fé em Jesus Cristo com orações católicas poderosas, novenas e a Bíblia Sagrada</p>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="oracoes.html">Orações</a>
+        <a href="novena.html">Novenas</a>
+        <a href="testemunhos.html">Testemunhos</a>
+        <a href="contato.html">Pedidos de Oração</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="politica-de-privacidade.html">Privacidade</a>
+        <a href="termos-de-uso.html">Termos</a>
+    </nav>
+</header>
 
     <div class="container">
         <section class="hero">
@@ -516,6 +516,46 @@
                 <p style="text-align: center; color: #999;">Carregando vídeos...</p>
             </div>
         </section>
+
+        <section class="prayer-form-section">
+  <div class="container">
+    <h2 style="text-align:center;">✨ Minuto de Sabedoria Bíblico ✨</h2>
+
+    <p style="text-align:center; margin-bottom:20px;">
+      Digite seu nome e receba uma mensagem de sabedoria com base na Palavra de Deus.
+    </p>
+
+    <div class="form-group">
+      <input
+        type="text"
+        id="nomeSabedoria"
+        placeholder="Digite seu nome"
+      />
+    </div>
+
+    <button class="btn-submit" onclick="gerarSabedoria()">
+      Receber minha mensagem 🙏
+    </button>
+
+    <!-- Resultado -->
+    <div
+      id="resultadoSabedoria"
+      style="display:none; margin-top:30px; text-align:center;"
+    >
+      <div class="prayer-card">
+        <p id="textoSabedoria" style="font-family:'Crimson Text', serif;"></p>
+      </div>
+
+      <button
+        class="btn-submit"
+        style="margin-top:20px;"
+        onclick="compartilharSabedoria()"
+      >
+        📤 Compartilhar esta mensagem
+      </button>
+    </div>
+  </div>
+</section>
 
         <section class="prayer-form-section">
             <h2>🙏 Envie Seu Pedido de Oração</h2>
@@ -621,17 +661,72 @@
         // VERSÍCULOS BÍBLICOS
         // ========================================
         const versiculos = [
-            { texto: "Tudo posso naquele que me fortalece.", referencia: "Filipenses 4:13" },
-            { texto: "O Senhor é o meu pastor, nada me faltará.", referencia: "Salmos 23:1" },
-            { texto: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.", referencia: "João 3:16" },
-            { texto: "Não temas, porque eu sou contigo; não te assombres, porque eu sou o teu Deus; eu te fortaleço, e te ajudo, e te sustento com a destra da minha justiça.", referencia: "Isaías 41:10" },
-            { texto: "Entrega o teu caminho ao Senhor; confia nele, e ele o fará.", referencia: "Salmos 37:5" },
-            { texto: "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei.", referencia: "Mateus 11:28" },
-            { texto: "Eu sou o caminho, e a verdade e a vida. Ninguém vem ao Pai, senão por mim.", referencia: "João 14:6" },
-            { texto: "Alegrai-vos sempre no Senhor; outra vez digo, alegrai-vos.", referencia: "Filipenses 4:4" },
-            { texto: "O Senhor é a minha luz e a minha salvação; a quem temerei?", referencia: "Salmos 27:1" },
-            { texto: "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento.", referencia: "Provérbios 3:5" }
-        ];
+  { texto: "Tudo posso naquele que me fortalece.", referencia: "Filipenses 4:13" },
+  { texto: "O Senhor é o meu pastor, nada me faltará.", referencia: "Salmos 23:1" },
+  { texto: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito.", referencia: "João 3:16" },
+  { texto: "Não temas, porque eu sou contigo.", referencia: "Isaías 41:10" },
+  { texto: "Entrega o teu caminho ao Senhor; confia nele.", referencia: "Salmos 37:5" },
+  { texto: "Vinde a mim, todos os que estais cansados.", referencia: "Mateus 11:28" },
+  { texto: "Eu sou o caminho, a verdade e a vida.", referencia: "João 14:6" },
+  { texto: "Alegrai-vos sempre no Senhor.", referencia: "Filipenses 4:4" },
+  { texto: "O Senhor é a minha luz e a minha salvação.", referencia: "Salmos 27:1" },
+  { texto: "Confia no Senhor de todo o teu coração.", referencia: "Provérbios 3:5" },
+
+  { texto: "Deus é o nosso refúgio e fortaleza.", referencia: "Salmos 46:1" },
+  { texto: "Clama a mim, e responder-te-ei.", referencia: "Jeremias 33:3" },
+  { texto: "O choro pode durar uma noite, mas a alegria vem pela manhã.", referencia: "Salmos 30:5" },
+  { texto: "O Senhor está perto dos que têm o coração quebrantado.", referencia: "Salmos 34:18" },
+  { texto: "O Senhor firma os passos do homem bom.", referencia: "Salmos 37:23" },
+  { texto: "O Senhor é bom, uma fortaleza no dia da angústia.", referencia: "Naum 1:7" },
+  { texto: "Aquietai-vos e sabei que eu sou Deus.", referencia: "Salmos 46:10" },
+  { texto: "O Senhor pelejará por vós.", referencia: "Êxodo 14:14" },
+  { texto: "O Senhor é misericordioso e compassivo.", referencia: "Salmos 103:8" },
+  { texto: "Se Deus é por nós, quem será contra nós?", referencia: "Romanos 8:31" },
+
+  { texto: "Lançai sobre Ele toda a vossa ansiedade.", referencia: "1 Pedro 5:7" },
+  { texto: "O Senhor é a minha rocha e fortaleza.", referencia: "Salmos 18:2" },
+  { texto: "O Senhor sustém todos os que caem.", referencia: "Salmos 145:14" },
+  { texto: "Bem-aventurados os que choram.", referencia: "Mateus 5:4" },
+  { texto: "O Senhor é fiel em todas as suas promessas.", referencia: "Salmos 145:13" },
+  { texto: "Esperei com paciência no Senhor.", referencia: "Salmos 40:1" },
+  { texto: "O Senhor guarda a tua entrada e a tua saída.", referencia: "Salmos 121:8" },
+  { texto: "A paz de Deus excede todo entendimento.", referencia: "Filipenses 4:7" },
+  { texto: "O Senhor é bom para os que esperam Nele.", referencia: "Lamentações 3:25" },
+  { texto: "O Senhor dá força ao seu povo.", referencia: "Salmos 29:11" },
+
+  { texto: "O Senhor é justo em todos os seus caminhos.", referencia: "Salmos 145:17" },
+  { texto: "O Senhor está comigo; não temerei.", referencia: "Salmos 118:6" },
+  { texto: "Bem-aventurado o homem que confia no Senhor.", referencia: "Jeremias 17:7" },
+  { texto: "O Senhor é a minha porção.", referencia: "Lamentações 3:24" },
+  { texto: "Buscai primeiro o Reino de Deus.", referencia: "Mateus 6:33" },
+  { texto: "O Senhor é a força da minha vida.", referencia: "Salmos 27:1" },
+  { texto: "Deus enxugará dos olhos toda lágrima.", referencia: "Apocalipse 21:4" },
+  { texto: "O Senhor é bom; eterna é a sua misericórdia.", referencia: "Salmos 100:5" },
+  { texto: "O Senhor ouve o clamor dos justos.", referencia: "Salmos 34:17" },
+  { texto: "O Senhor é a minha ajuda.", referencia: "Salmos 121:2" },
+
+  { texto: "O Senhor é o meu refúgio.", referencia: "Salmos 91:2" },
+  { texto: "O Senhor te abençoe e te guarde.", referencia: "Números 6:24" },
+  { texto: "O Senhor é a minha força e o meu cântico.", referencia: "Êxodo 15:2" },
+  { texto: "O Senhor está perto de todos os que o invocam.", referencia: "Salmos 145:18" },
+  { texto: "O Senhor faz novas todas as coisas.", referencia: "Apocalipse 21:5" },
+  { texto: "O Senhor é a minha salvação.", referencia: "Salmos 62:1" },
+  { texto: "O Senhor guarda os que o temem.", referencia: "Salmos 33:18" },
+  { texto: "O Senhor é bondoso e fiel.", referencia: "Salmos 86:15" },
+  { texto: "O Senhor é o meu auxílio.", referencia: "Salmos 54:4" },
+  { texto: "O Senhor sustenta a minha vida.", referencia: "Salmos 54:4" },
+
+  { texto: "O Senhor é a minha esperança.", referencia: "Jeremias 17:7" },
+  { texto: "O Senhor conhece os dias dos retos.", referencia: "Salmos 37:18" },
+  { texto: "O Senhor é a minha proteção.", referencia: "Salmos 18:35" },
+  { texto: "O Senhor cuida dos humildes.", referencia: "Salmos 147:6" },
+  { texto: "O Senhor é a minha paz.", referencia: "Juízes 6:24" },
+  { texto: "O Senhor é a minha força no dia da angústia.", referencia: "Jeremias 16:19" },
+  { texto: "O Senhor é fiel em todo tempo.", referencia: "Salmos 119:90" },
+  { texto: "O Senhor não abandona os seus.", referencia: "Salmos 37:28" },
+  { texto: "O Senhor guia os humildes no caminho.", referencia: "Salmos 25:9" },
+  { texto: "O Senhor é bom para todos.", referencia: "Salmos 145:9" }
+];
 
         // ========================================
         // TESTEMUNHOS
@@ -909,5 +1004,149 @@
             });
         });
     </script>
+    <script>
+  // ==============================
+  // MINUTO DE SABEDORIA BÍBLICO
+  // ==============================
+
+  // Mensagens de sabedoria (ORIGINAIS)
+  const mensagensSabedoria = [
+  "reserve este minuto. Deus vê o que você sente em silêncio. Nada do que você enfrenta passa despercebido aos olhos do Senhor. Confie, porque Ele está cuidando de você, mesmo quando você não entende o processo.",
+  "Deus conhece o peso que seu coração carrega. Quando tudo parece parado, o céu está trabalhando em silêncio a seu favor. Persevere.",
+  "não desanime. O tempo de espera não é perda, é preparação. Deus fortalece seu interior antes de mudar o exterior.",
+  "lembre-se: aquilo que hoje parece dor, amanhã será testemunho. Deus não desperdiça nenhuma lágrima.",
+  "mesmo quando você se sente fraco, Deus permanece forte em sua vida. Ele nunca soltou a sua mão.",
+  "Deus está mais perto do que você imagina. Mesmo no silêncio, Ele está ouvindo cada oração do seu coração.",
+  "quando faltar força, lembre-se: é Deus quem te sustenta nos dias difíceis.",
+  "confie no agir de Deus. O que hoje parece confusão, amanhã fará sentido.",
+  "Deus não se atrasa. Ele chega exatamente no momento certo, nem antes, nem depois.",
+  "seu coração pode estar cansado, mas Deus renova suas forças a cada manhã.",
+  "não perca a fé. Deus transforma cenários impossíveis em testemunhos vivos.",
+  "mesmo que tudo pareça escuro, Deus continua sendo luz no seu caminho.",
+  "Deus vê sua luta diária e se alegra com sua perseverança.",
+  "o Senhor cuida de você até nos detalhes que ninguém vê.",
+  "Deus usa o deserto para ensinar, fortalecer e preparar grandes vitórias.",
+  "quando você ora em silêncio, o céu se move em seu favor.",
+  "Deus nunca abandona quem confia Nele de coração sincero.",
+  "o agir de Deus é invisível aos olhos humanos, mas poderoso na vida.",
+  "não tenha medo. Deus está à frente de tudo o que você enfrenta.",
+  "Deus conhece suas dores antes mesmo que você consiga explicá-las.",
+  "cada lágrima sua é vista por Deus e guardada com amor.",
+  "Deus trabalha enquanto você descansa na fé.",
+  "não se compare. Deus tem um tempo perfeito só para você.",
+  "mesmo em meio à tempestade, Deus permanece no controle.",
+  "o silêncio de Deus nunca significa abandono.",
+  "Deus te fortalece exatamente onde você pensa que vai cair.",
+  "confie: Deus já está cuidando do amanhã que te preocupa hoje.",
+  "o Senhor nunca falha com quem deposita Nele a esperança.",
+  "Deus transforma fraqueza em força e dor em aprendizado.",
+  "quando tudo falhar, Deus continuará sendo fiel.",
+  "Deus conhece seu limite e nunca permitirá algo maior que você suporte.",
+  "a paz que vem de Deus acalma até os corações mais feridos.",
+  "não se desespere. Deus já está trabalhando na solução.",
+  "o tempo de Deus é perfeito, mesmo quando parece demorado.",
+  "Deus honra quem permanece firme na fé.",
+  "mesmo quando você não entende, Deus continua cuidando.",
+  "o Senhor te guarda enquanto você segue confiando.",
+  "Deus nunca ignora uma oração feita com fé.",
+  "o amor de Deus te envolve até nos dias difíceis.",
+  "confie no Senhor, Ele sabe exatamente o que faz.",
+  "Deus transforma dor em maturidade espiritual.",
+  "cada passo de fé te aproxima do propósito de Deus.",
+  "o Senhor renova sua esperança quando tudo parece perdido.",
+  "Deus cuida do que você não consegue controlar.",
+  "permaneça firme. Deus está preparando algo maior.",
+  "Deus age quando você escolhe confiar.",
+  "o Senhor é refúgio seguro em tempos de aflição.",
+  "Deus nunca se esquece de quem ora com o coração sincero.",
+  "descansar em Deus também é um ato de fé."
+];
+
+  // Versículos exclusivos do Minuto de Sabedoria
+  const versiculosSabedoria = [
+  "📖 “Entrega o teu caminho ao Senhor; confia nele, e Ele tudo fará.” — Salmos 37:5",
+  "📖 “O Senhor está perto dos que têm o coração quebrantado.” — Salmos 34:18",
+  "📖 “Não temas, porque Eu sou contigo.” — Isaías 41:10",
+  "📖 “Lançai sobre Ele toda a vossa ansiedade, porque Ele tem cuidado de vós.” — 1 Pedro 5:7",
+  "📖 “Tudo posso naquele que me fortalece.” — Filipenses 4:13",
+  "📖 “O Senhor é o meu pastor; nada me faltará.” — Salmos 23:1",
+  "📖 “Aquietai-vos e sabei que Eu sou Deus.” — Salmos 46:10",
+  "📖 “Clama a mim, e responder-te-ei.” — Jeremias 33:3",
+  "📖 “O choro pode durar uma noite, mas a alegria vem pela manhã.” — Salmos 30:5",
+  "📖 “O Senhor é bom, uma fortaleza no dia da angústia.” — Naum 1:7",
+  "📖 “Confia no Senhor de todo o teu coração.” — Provérbios 3:5",
+  "📖 “O Senhor é a minha luz e a minha salvação; a quem temerei?” — Salmos 27:1",
+  "📖 “Bem-aventurados os que choram, porque serão consolados.” — Mateus 5:4",
+  "📖 “Buscai primeiro o Reino de Deus.” — Mateus 6:33",
+  "📖 “O Senhor te abençoe e te guarde.” — Números 6:24",
+  "📖 “O Senhor é a força do seu povo.” — Salmos 28:8",
+  "📖 “Ainda que eu ande pelo vale da sombra da morte, não temerei mal algum.” — Salmos 23:4",
+  "📖 “Deus é o nosso refúgio e fortaleza.” — Salmos 46:1",
+  "📖 “Entrega as tuas obras ao Senhor, e teus planos serão bem-sucedidos.” — Provérbios 16:3",
+  "📖 “O Senhor firma os passos do homem bom.” — Salmos 37:23",
+  "📖 “A minha graça te basta.” — 2 Coríntios 12:9",
+  "📖 “O Senhor pelejará por vós; e vós vos calareis.” — Êxodo 14:14",
+  "📖 “O Senhor está comigo; não temerei.” — Salmos 118:6",
+  "📖 “Bem-aventurado o homem que confia no Senhor.” — Jeremias 17:7",
+  "📖 “O Senhor é compassivo e misericordioso.” — Salmos 103:8",
+  "📖 “Deus enxugará dos olhos toda lágrima.” — Apocalipse 21:4",
+  "📖 “Se Deus é por nós, quem será contra nós?” — Romanos 8:31",
+  "📖 “O Senhor ouve o clamor dos justos.” — Salmos 34:17",
+  "📖 “O coração do homem pode fazer planos, mas a resposta certa vem do Senhor.” — Provérbios 16:1",
+  "📖 “O Senhor sustém todos os que caem.” — Salmos 145:14",
+  "📖 “O Senhor é fiel em todas as suas promessas.” — Salmos 145:13",
+  "📖 “Esperei com paciência no Senhor.” — Salmos 40:1",
+  "📖 “O Senhor te guardará de todo mal.” — Salmos 121:7",
+  "📖 “A paz de Deus excede todo entendimento.” — Filipenses 4:7",
+  "📖 “O Senhor é bom para os que esperam Nele.” — Lamentações 3:25",
+  "📖 “O Senhor é a minha força e o meu cântico.” — Êxodo 15:2",
+  "📖 “O Senhor faz novas todas as coisas.” — Apocalipse 21:5",
+  "📖 “O Senhor está perto de todos os que o invocam.” — Salmos 145:18",
+  "📖 “Bem-aventurado o povo cujo Deus é o Senhor.” — Salmos 144:15",
+  "📖 “O Senhor é justo em todos os seus caminhos.” — Salmos 145:17",
+  "📖 “O Senhor é a minha porção.” — Lamentações 3:24",
+  "📖 “O Senhor é a minha rocha e fortaleza.” — Salmos 18:2",
+  "📖 “O Senhor é misericordioso e compassivo.” — Salmos 103:8",
+  "📖 “Aos que amam a Deus, todas as coisas cooperam para o bem.” — Romanos 8:28",
+  "📖 “O Senhor dá força ao seu povo.” — Salmos 29:11",
+  "📖 “O Senhor guarda a tua entrada e a tua saída.” — Salmos 121:8",
+  "📖 “O Senhor é bom; eterna é a sua misericórdia.” — Salmos 100:5"
+];
+
+  function gerarSabedoria() {
+    const nome = document.getElementById("nomeSabedoria").value.trim();
+
+    if (!nome) {
+      alert("Por favor, digite seu nome.");
+      return;
+    }
+
+    const mensagem =
+      mensagensSabedoria[Math.floor(Math.random() * mensagensSabedoria.length)];
+
+    const versiculo =
+      versiculosSabedoria[Math.floor(Math.random() * versiculosSabedoria.length)];
+
+    const textoFinal = `
+      <strong>${nome}</strong>, ${mensagem}
+      <br><br>
+      ${versiculo}
+    `;
+
+    document.getElementById("textoSabedoria").innerHTML = textoFinal;
+    document.getElementById("resultadoSabedoria").style.display = "block";
+  }
+
+  function compartilharSabedoria() {
+    const texto = document.getElementById("textoSabedoria").innerText;
+    const linkSite = window.location.href;
+
+    const mensagemWhats =
+      encodeURIComponent(texto + "\n\n🙏 Receba sua mensagem em:\n" + linkSite);
+
+    window.open("https://wa.me/?text=" + mensagemWhats, "_blank");
+  }
+</script>
+
 </body>
 </html>
