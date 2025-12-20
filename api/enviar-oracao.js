@@ -34,7 +34,6 @@ module.exports = async (req, res) => {
             template_params: {
                 from_name: name,
                 from_email: email,
-                subject: `Novo Pedido de Oração de ${name}`, // Assunto dinâmico para melhor rastreamento
                 message: pedido,
             }
         };
