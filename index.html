@@ -1250,7 +1250,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         fetch('/api/enviar-oracao', {
             method: 'POST',
-            body: new FormData(form)
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: form.querySelector('[name="name"]').value,
+                email: form.querySelector('[name="email"]').value,
+                pedido: form.querySelector('[name="pedido"]').value
+            })
         })
         .then(response => {
             if (!response.ok) {
@@ -1276,8 +1283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-       /* ========================================
+  /* ========================================
            CONFIGURAR FILTROS DE VÍDEO
            Adiciona evento de clique nos botões de filtro
         ========================================= */
