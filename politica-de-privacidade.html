@@ -122,6 +122,40 @@
                 font-size: 1.4rem;
             }
         }
+        .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.menu {
+    display: none;
+    flex-direction: column;
+    background: #1e3c72;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  nav.menu a {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  nav.menu.active {
+    display: flex;
+  }
+}
+
     </style>
 </head>
 
@@ -134,7 +168,10 @@
         Conheça como protegemos seus dados e respeitamos sua privacidade
     </h2>
 
-    <nav style="background:#1e3c72; padding:1rem; border-radius:10px; text-align:center;">
+    <!-- BOTÃO MENU MOBILE -->
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+    <nav class="menu" style="background:#1e3c72; padding:1rem; border-radius:10px; text-align:center;">
         <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">Início</a>
         <a href="oracoes.html" style="color:white; margin:0 15px; text-decoration:none;">Orações</a>
         <a href="novena.html" style="color:white; margin:0 15px; text-decoration:none;">Novenas</a>
@@ -146,7 +183,6 @@
         <a href="termos-de-uso.html" style="color:white; margin:0 15px; text-decoration:none;">Termos</a>
     </nav>
 </header>
-
 <main class="container">
     <section class="card">
 
@@ -224,6 +260,14 @@
     <p>Levando a Palavra de Deus e a fé em Jesus Cristo para todo o Brasil</p>
     <p>© 2025 - Todos os direitos reservados | Feito com fé e amor ❤️</p>
 </footer>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('nav.menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
