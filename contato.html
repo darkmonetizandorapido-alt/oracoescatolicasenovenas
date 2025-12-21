@@ -521,6 +521,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 </script>
-
+<script>
+  // Fecha o menu mobile ao clicar em um link
+  document.querySelectorAll('nav.menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      const menu = document.querySelector('nav.menu');
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+      }
+    });
+  });
+</script>
 </body>
 </html>
