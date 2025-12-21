@@ -43,6 +43,40 @@
             padding:2rem;
             margin-top:3rem;
         }
+        .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.menu {
+    display: none;
+    flex-direction: column;
+    background: #1e3c72;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  nav.menu a {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  nav.menu.active {
+    display: flex;
+  }
+}
+
     </style>
 </head>
 
@@ -50,10 +84,13 @@
 
 <header>
     <h1 style="color:white; margin:0 15px; text-decoration:none;">
-        🕯️ Novenas Católicas</h1>
+        📿 Orações Católicas</h1>
     <h2 style="color:white; margin:0 15px; text-decoration:none;">
-        Aprenda a rezar novenas católicas passo a passo com fé, devoção e confiança em Deus
+        Aprenda orações católicas poderosas para fortalecer sua fé e comunhão com Deus
     </h2>
+
+    <!-- BOTÃO MENU MOBILE -->
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
 
     <nav style="background:#1e3c72; padding:1rem; border-radius:10px; text-align:center;">
         <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">Início</a>
@@ -67,7 +104,6 @@
         <a href="termos-de-uso.html" style="color:white; margin:0 15px; text-decoration:none;">Termos</a>
     </nav>
 </header>
-
 <!-- ================= CONTEÚDO ORGANIZADO ================= -->
 <div class="container">
 
@@ -178,6 +214,14 @@
     <p>© 2025 - Orações Católicas e Novenas</p>
     <p>Feito com fé e amor ❤️</p>
 </footer>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('nav.menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
