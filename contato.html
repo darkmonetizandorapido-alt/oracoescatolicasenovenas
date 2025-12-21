@@ -6,7 +6,8 @@
 <title>Contato | Orações Católicas e Novenas</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
+
+        <style>
         /* ========================================
            RESETAR ESTILOS PADRÃO DO NAVEGADOR
            (Deixa tudo padronizado)
@@ -361,6 +362,21 @@
   }
 }
 
+.error-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #ffe6e6;
+    color: #a00000;
+    border: 1px solid #a00000;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
     </style>
 </head>
 <body>
@@ -399,31 +415,43 @@
 </header>
 
 <div class="container">
-<section class="prayer-form-section">
-<h2>🙏 Entre em Contato Conosco</h2>
-<p style="text-align:center;">Envie sua mensagem ou pedido de oração. Estamos unidos em fé.</p>
-<form id="prayer-form">
-<div class="form-group">
-<label>Nome</label>
-<input type="text" name="name" required>
+  <section class="prayer-form-section">
+    <h2>🙏 Entre em Contato Conosco</h2>
+    <p style="text-align:center;">
+      Envie sua mensagem ou pedido de oração. Estamos unidos em fé.
+    </p>
+
+    <form id="prayer-form">
+      <div class="form-group">
+        <label>Nome</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Mensagem / Pedido de Oração</label>
+        <textarea name="pedido" id="pedido" required></textarea>
+      </div>
+
+      <p style="font-size:0.8rem;color:#666;">
+        Ao enviar este formulário, você concorda com nossa
+        <a href="politica-de-privacidade.html">Política de Privacidade</a>.
+      </p>
+
+      <button type="submit" class="btn-submit">Enviar 🙏</button>
+
+      <div class="success-message" id="success-message">
+        Pedido enviado com sucesso. Estamos rezando por você 🙏
+      </div>
+      <div class="error-message" id="error-message"></div>
+    </form>
+  </section>
 </div>
-<div class="form-group">
-<label>Email</label>
-<input type="email" name="email" required>
-</div>
-<div class="form-group">
-<label>Mensagem / Pedido de Oração</label>
-<textarea name="pedido" required></textarea>
-</div>
-<p style="font-size:0.8rem;color:#666;">
-Ao enviar este formulário, você concorda com nossa
-<a href="politica-de-privacidade.html">Política de Privacidade</a>.
-</p>
-<button type="submit" class="btn-submit">Enviar 🙏</button>
-<div class="success-message" id="success-message">Pedido enviado com sucesso. Estamos rezando por você 🙏</div>
-</form>
-</section>
-</div>
+
 <footer>
         <p><strong>Orações Católicas e Novenas</strong></p>
         <p>Levando a Palavra de Deus e a fé em Jesus Cristo para todo o Brasil</p>
@@ -431,11 +459,10 @@ Ao enviar este formulário, você concorda com nossa
             © 2025 - Todos os direitos reservados | Feito com fé e amor ❤️
         </p>
     </footer>
-// Não precisamos mais do script do EmailJS no frontend
 <script>
-// A inicialização do EmailJS foi movida para o backend (Serverless Function)
-// O SERVICE_ID foi movido para o backend (Serverless Function)
-async function enviarFormulario(e) {
+document.addEventListener('DOMContentLoaded', () => {
+
+  async function enviarFormulario(e) {
     e.preventDefault();
 
     const form = e.target;
@@ -445,50 +472,55 @@ async function enviarFormulario(e) {
     btn.disabled = true;
     btn.innerText = "Enviando pedido...";
 
-    // Coleta os dados do formulário
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
     try {
-        // Envia os dados para a Serverless Function
-        const response = await fetch('/api/email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
+      const response = await fetch('/api/email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
 
-        if (response.ok) {
-            successMsg.classList.add('show');
-            form.reset();
-        } else {
-            const errorData = await response.json();
-            console.error("Erro na API de E-mail:", errorData);
-            alert("❌ Não foi possível enviar seu pedido agora. Tente novamente. Detalhes: " + (errorData.error || "Erro desconhecido"));
-        }
+      if (response.ok) {
+        successMsg.classList.add('show');
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        console.error("Erro na API de E-mail:", errorData);
+        alert(
+          "❌ Não foi possível enviar seu pedido agora. " +
+          (errorData.error || "Tente novamente em instantes.")
+        );
+      }
 
     } catch (error) {
-        console.error("Erro de rede:", error);
-        alert("❌ Não foi possível enviar seu pedido agora. Verifique sua conexão.");
+      console.error("Erro de rede:", error);
+      alert("❌ Erro de conexão. Verifique sua internet.");
     } finally {
-        btn.disabled = false;
-        btn.innerText = "Enviar 🙏";
+      btn.disabled = false;
+      btn.innerText = "Enviar 🙏";
 
-        setTimeout(() => {
-            successMsg.classList.remove('show');
-        }, 6000);
+      setTimeout(() => {
+        successMsg.classList.remove('show');
+      }, 6000);
     }
-}
-document.getElementById('prayer-form').addEventListener('submit', enviarFormulario);
-</script>
-        <script>
+  }
+
+  const form = document.getElementById('prayer-form');
+  if (form) {
+    form.addEventListener('submit', enviarFormulario);
+  }
+
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('nav.menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  }
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
+});
 </script>
 
 </body>
