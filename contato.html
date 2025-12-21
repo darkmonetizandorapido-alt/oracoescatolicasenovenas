@@ -101,25 +101,6 @@
             margin-bottom: 2rem;
         }
 
-        /* BOTÃO CHAMATIVO PARA O YOUTUBE */
-        .btn-youtube {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 8px 20px rgba(255,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-youtube:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(255,0,0,0.4);
-        }
-
         /* ========================================
            ESPAÇO PARA GOOGLE ADS
            COLE O CÓDIGO DO GOOGLE ADSENSE AQUI NO HTML
@@ -177,110 +158,7 @@
             font-weight: 600;
         }
 
-        /* ========================================
-           SEÇÃO DE VÍDEOS DO YOUTUBE
-           JavaScript vai carregar os vídeos aqui
-        ========================================= */
-        .videos-section {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .videos-section h2 {
-            font-family: 'Crimson Text', serif;
-            font-size: 2rem;
-            color: #1e3c72;
-            text-align: center;
-            margin-bottom: 2rem;
-            border-bottom: 3px solid #d4af37;
-            padding-bottom: 1rem;
-        }
-
-        /* CONTROLES DE FILTRO DOS VÍDEOS */
-        .video-controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .btn-filter {
-            background: #1e3c72;
-            color: white;
-            border: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-filter:hover, .btn-filter.active {
-            background: #d4af37;
-            transform: translateY(-2px);
-        }
-
-        /* GRID DE VÍDEOS - Responsivo */
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .video-card {
-            background: #f9f9f9;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .video-card iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-        }
-
-        .video-card-content {
-            padding: 1rem;
-        }
-
-        .video-card h3 {
-            font-size: 1rem;
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        /* BOTÃO VER MAIS VÍDEOS */
-        .btn-load-more {
-            display: block;
-            margin: 2rem auto;
-            background: #d4af37;
-            color: white;
-            border: none;
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-load-more:hover {
-            background: #1e3c72;
-            transform: scale(1.05);
-        }
-
+        
         /* ========================================
            FORMULÁRIO DE PEDIDO DE ORAÇÃO
            TROQUE: O e-mail de destino no JavaScript
@@ -449,6 +327,40 @@
                 grid-template-columns: 1fr;
             }
         }
+        .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.menu {
+    display: none;
+    flex-direction: column;
+    background: #1e3c72;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  nav.menu a {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  nav.menu.active {
+    display: flex;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -556,5 +468,14 @@ async function enviarFormulario(e) {
 }
 document.getElementById('prayer-form').addEventListener('submit', enviarFormulario);
 </script>
+        <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('nav.menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
