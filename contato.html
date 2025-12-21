@@ -7,6 +7,9 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        
         <style>
         /* ========================================
            RESETAR ESTILOS PADRÃO DO NAVEGADOR
@@ -460,6 +463,19 @@
         </p>
     </footer>
 <script>
+
+        const EMAILJS_CONFIG = {
+  publicKey: 'aC3Wwjnb7FUyIJzHX',
+  serviceID: 'service_xjjexx7',
+  templateID: 'template_9c27uea'
+};
+
+function validarConfiguracao() {
+  return EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.serviceID && EMAILJS_CONFIG.templateID;
+}
+
+emailjs.init(EMAILJS_CONFIG.publicKey);
+        
 document.addEventListener('DOMContentLoaded', () => {
 
   async function enviarFormulario(e) {
@@ -519,6 +535,64 @@ document.addEventListener('DOMContentLoaded', () => {
       menu.classList.toggle('active');
     });
   }
+
+});
+</script>
+<script>
+/* ===============================
+   CONFIGURAÇÃO EMAILJS
+================================ */
+const EMAILJS_CONFIG = {
+  publicKey: 'aC3Wwjnb7FUyIJzHX',
+  serviceID: 'service_xjjexx7',
+  templateID: 'template_9c27uea'
+};
+
+// Inicializa EmailJS
+emailjs.init(EMAILJS_CONFIG.publicKey);
+
+/* ===============================
+   ENVIO DO FORMULÁRIO
+================================ */
+document.addEventListener('DOMContentLoaded', () => {
+
+  const form = document.getElementById('prayer-form');
+  const successMsg = document.getElementById('success-message');
+  const errorMsg = document.getElementById('error-message');
+  const btn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    btn.disabled = true;
+    btn.innerText = 'Enviando pedido...';
+
+    try {
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceID,
+        EMAILJS_CONFIG.templateID,
+        {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          pedido: document.getElementById('pedido').value
+        }
+      );
+
+      successMsg.style.display = 'block';
+      form.reset();
+
+    } catch (error) {
+      console.error('Erro EmailJS:', error);
+      errorMsg.innerText = '❌ Não foi possível enviar seu pedido agora. Tente novamente.';
+      errorMsg.style.display = 'block';
+    } finally {
+      btn.disabled = false;
+      btn.innerText = 'Enviar 🙏';
+    }
+  });
 
 });
 </script>
