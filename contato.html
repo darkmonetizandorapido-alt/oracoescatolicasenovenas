@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('/api/email', {
+      const response = await fetch('/api/enviar-oracao', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
