@@ -1145,7 +1145,16 @@
                 // Mostra mensagem de sucesso
                 successMsg.classList.add('show');
                 form.reset();
-                
+
+				// 🔥 EVENTO GA4 - ENVIO DE PEDIDO DE ORAÇÃO
+if (typeof gtag === 'function') {
+  gtag('event', 'form_submit', {
+    event_category: 'pedido_oracao',
+    event_label: 'envio_sucesso',
+    value: 1
+  });
+  console.log('📊 Evento GA4 form_submit disparado');
+}
                 // Esconde mensagem após 8 segundos
                 setTimeout(() => {
                     successMsg.classList.remove('show');
