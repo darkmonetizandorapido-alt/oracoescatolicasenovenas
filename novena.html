@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRTBVHDHCT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GRTBVHDHCT');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novena Católica - Passo a Passo</title>
+    <meta name="description" content="Aprenda a fazer novenas católicas passo a passo. Novenas poderosas para fé, proteção, saúde, prosperidade e bênçãos.">
+    <meta name="keywords" content="novena, passo a passo, oracoes catolicas, fe, milagres, Jesus Cristo, Palavra de Deus, espiritualidade">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), 
+                        url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=1920') center/cover fixed;
+            overflow-x: hidden;
+        }
+
+        /* LOGO TOPO */
+        .header-top {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .logo-topo img {
+            max-height: 80px;
+            width: auto;
+            max-width: 90%;
+            transition: all 0.3s ease;
+        }
+
+        /* MOBILE LOGO */
+        @media (max-width: 480px) {
+            .logo-topo img {
+                max-height: 60px;
+            }
+        }
+
+        /* HEADER */
+        header {
+            background: #264580;
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .header-fixed {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+        }
+
+        /* MENU */
+        nav.menu {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        nav.menu a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        nav.menu a:hover {
+            color: #d4af37;
+        }
+
+        .nav-estudos {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-top: 5px solid #d4af37;
+        }
+
+        h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.2rem;
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            color: #1e3c72;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        /* BOTÃO HISTÓRIA */
+        .btn-historia-novena {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #d4af37, #b8962e);
+            color: #264580;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 16px 38px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            transition: all 0.35s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn-historia-novena:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+        }
+
+
+        /* FOOTER ORIGINAL */
+        footer {
+            background: #1e3c72;
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: white; /* Garante que o texto de copyright seja branco */
+        }
+
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0;
+            text-decoration: none;
+        }
+
+        .social-links img {
+            max-height: 40px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.95;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .logo-youtube { max-height: 50px; }
+        .logo-facebook { max-height: 50px; }
+
+        .social-links a:hover img {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        @media (max-width: 480px) {
+            .social-links img { max-height: 22px; }
+            .logo-youtube { max-height: 24px; }
+            .logo-facebook { max-height: 20px; }
+        }
+
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav.menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #1e3c72;
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+            nav.menu.active { display: flex; }
+            nav.menu a {
+                padding: 12px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                margin: 0;
+            }
+            h2 { font-size: 1.8rem; }
+        }
+
+        /* SCROLL EFFECT */
+        header.shrink .header-top {
+            display: none;
+        }
+        		/* ================================
+   BOTÃO CTA - PEDIDO DE ORAÇÃO
+================================ */
+.cta-oracao {
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  text-align: center;
+  padding: 15px 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.btn-oracao-destaque {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffffff, #fff6d5);
+  color: #1e3c72;
+  font-weight: 700;
+  padding: 14px 35px;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  text-decoration: none;
+  animation: pulseOracao 1.6s infinite;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-oracao-destaque:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+/* ANIMAÇÃO DE DESTAQUE */
+@keyframes pulseOracao {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.6); }
+  70% { box-shadow: 0 0 0 18px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .btn-oracao-destaque {
+    font-size: 0.95rem;
+    padding: 12px 28px;
+  }
+}
+		#pedido-oracao {
+  scroll-margin-top: 180px; /* ajuste esse valor */
+}
+    </style>
+</head>
+<body>
+
+<header id="main-header">
+    <div class="header-top">
+        <div class="logo-topo">
+            <a href="index.html">
+                <img src="imagens/logo-topo.gif" alt="Orações Católicas e Novenas">
+            </a>
+        </div>
+    </div>
+    <div class="header-fixed">
+        <h1 class="titulo-pagina">Novenas Católicas</h1>
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="oracoes.html">Orações</a>
+            <a href="novena.html">Novenas</a>
+            <a href="testemunhos.html">Testemunhos</a>
+            <a href="/index.html#minuto-sabedoria" style="font-weight:600; color:#ffd700;">✨ Minuto de Sabedoria ✨</a>
+            <a href="contato.html">Contato</a>
+            <a href="o-poder-da-oracao-na-vida-catolica.html" class="nav-estudos">Estudos e Reflexões</a>
+            <a href="faq.html">FAQ</a> 
+        </nav>
+    </div>
+</header>
+
+<!-- BOTÃO DE DESTAQUE - PEDIDO DE ORAÇÃO -->
+<div class="cta-oracao">
+  <a href="/index.html#pedido-oracao" class="btn-oracao-destaque">
+    🙏 Enviar Pedido de Oração Agora
+  </a>
+</div>
+
+<div class="container">
+    <div class="section-card">
+        <h2>Novenas Católicas</h2>
+        <p>
+            A novena é uma prática de devoção profundamente enraizada na tradição católica, com origem nos nove dias vividos pelos apóstolos em oração entre a Ascensão de Jesus e o Pentecostes. Esse período simboliza a perseverança, a confiança e a esperança daquele que espera a ação do Espírito Santo. Mais do que uma simples sequência de orações, a novena expressa um caminho espiritual de entrega, fé constante e intimidade com Deus. Ao rezar uma novena, o fiel é convidado a ir além da repetição de palavras, mergulhando no sentido espiritual de cada dia, compreendendo a intenção, o contexto bíblico e o significado teológico dessa prática. Cada novena carrega uma riqueza espiritual que fortalece a fé, renova a esperança e conduz à conversão do coração. Por isso, além do guia prático, é fundamental buscar aprofundamento espiritual. Nossos Estudos e Reflexões foram preparados para ajudar você a compreender melhor a doutrina, a tradição da Igreja e o valor da oração perseverante. Dessa forma, a fé deixa de ser apenas um costume e se transforma em um verdadeiro encontro com Deus, capaz de gerar frutos duradouros na vida cristã.
+        </p>
+        <p style="font-weight: 600; text-align: center; color: #1e3c72; font-size: 1.2rem;">
+            Aprenda a rezar novenas passo a passo com fé e devoção
+        </p>
+    </div>
+
+
+    <div class="section-card">
+        <h3>O Que é uma Novena?</h3>
+        <p>
+            A novena é uma prática católica que consiste em rezar durante nove dias consecutivos com uma intenção específica, pedindo a intercessão de Jesus Cristo, da Virgem Maria ou de algum santo. É uma forma poderosa de fortalecer a fé e receber bênçãos divinas.
+        </p>
+        <p>
+            As novenas fazem parte da tradição da Igreja Católica e são práticas de devoção pessoal, baseadas na fé e na oração.
+        </p>
+    </div>
+
+    <div class="section-card">
+        <h3>Como Fazer uma Novena Passo a Passo</h3>
+        <ol>
+            <li><strong>Escolha a novena:</strong> Identifique a intenção da sua oração, como saúde, emprego, proteção ou prosperidade.</li>
+            <li><strong>Prepare seu coração:</strong> Encontre um local tranquilo, acenda uma vela e mantenha seu foco na oração.</li>
+            <li><strong>Reze diariamente:</strong> Durante nove dias, faça a oração específica da novena, com fé e devoção.</li>
+            <li><strong>Medite na Palavra de Deus:</strong> Leia um versículo bíblico relacionado à sua intenção antes ou depois da oração.</li>
+            <li><strong>Finalização:</strong> Agradeça a Deus e ao santo ou à Virgem Maria por ouvir suas preces.</li>
+            <li><strong>Compartilhe testemunhos:</strong> Caso a oração seja atendida, compartilhe sua experiência para inspirar outros fiéis.</li>
+        </ol>
+    </div>
+
+
+    <div class="section-card">
+        <h3>Exemplo de Novena Poderosa</h3>
+        <p>
+            <strong>Novena de São Bento:</strong> reze o Salmo 91 todos os dias durante nove dias, pedindo proteção contra inimigos e forças negativas. Acrescente uma oração a São Bento pedindo sabedoria e força espiritual.
+        </p>
+        <p>
+            Seguindo este passo a passo, você pode realizar qualquer novena com fé, dedicação e amor, experimentando milagres em sua vida.
+        </p>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="historia-da-novena.html" class="btn-historia-novena">
+                Conheça a História da Novena
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p style="color: white !important;">&copy; 2025 Orações Católicas e Novenas. Todos os direitos reservados.</p>
+
+        <div class="social-links">
+            <a href="https://www.youtube.com/@Ora%C3%A7%C3%B5esCat%C3%B3licasENovenas" target="_blank" aria-label="YouTube">
+                <img src="imagens/logoyoutube.png" alt="YouTube" class="logo-youtube">
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61585771315343&locale=pt_BR" target="_blank" aria-label="Facebook">
+                <img src="imagens/logofacebook.png" alt="Facebook" class="logo-facebook">
+            </a>
+        </div>
+
+        <p>
+            <a href="politica-de-privacidade.html">Política de Privacidade</a> |
+            <a href="termos-de-uso.html">Termos de Uso</a> |
+            <a href="sobre.html">Sobre Nós</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('nav.menu');
+
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.classList.add('shrink');
+        } else {
+            header.classList.remove('shrink');
+        }
+    });
+</script>
+
+</body>
+</html>

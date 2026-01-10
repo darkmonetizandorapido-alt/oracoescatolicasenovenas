@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRTBVHDHCT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GRTBVHDHCT');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Política de Privacidade | Orações Católicas e Novenas</title>
+
+    <meta name="description" content="Política de Privacidade do site Orações Católicas e Novenas. Saiba como protegemos seus dados conforme a LGPD.">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)),
+                        url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=1920')
+                        center/cover fixed;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* ========================================
+   HEADER
+======================================== */
+header {
+    background: #264580;
+    color: #ffffff;
+    padding: 1rem 2rem; /* menor padding vertical */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2rem; /* um pouco menor que 2.2rem */
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.35); /* sombra reduzida */
+}
+
+nav {
+    margin-top: 0.5rem; /* reduz espaço entre título e menu */
+}
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= CONTAINER ================= */
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        /* ================= CARD PRINCIPAL ================= */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.4rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+
+        .card h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.6rem;
+            color: #1e3c72;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 1.3rem;
+        }
+
+        /* FOOTER */
+footer {
+    background: #264580;
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+
+    /* centralização total */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Container interno */
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* Links gerais */
+footer a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Área dos ícones sociais */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Links dos logos */
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0; /* elimina influência de texto */
+    text-decoration: none;
+}
+
+/* LOGOS – pequenos e proporcionais */
+.social-links img {
+    max-height: 40px;   /* desktop */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.95;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Ajustes individuais */
+.logo-youtube {
+    max-height: 50px;
+}
+
+.logo-facebook {
+    max-height: 50px;
+}
+
+/* Hover discreto */
+.social-links a:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .social-links img {
+        max-height: 22px;
+    }
+
+    .logo-youtube {
+        max-height: 24px;
+    }
+
+    .logo-facebook {
+        max-height: 20px;
+    }
+}
+ /* LOGO TOPO */
+.logo-topo img {
+    max-height: 80px;  /* altura máxima do logo no desktop */
+    width: auto;        /* mantém proporção */
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .logo-topo img {
+        max-height: 50px; /* altura reduzida no celular */
+    }
+}
+        
+        /* Estilos para o novo menu de Estudos */
+        .nav-estudos {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        /* ================= RESPONSIVO ================= */
+        @media (max-width: 768px) {
+            .card {
+                padding: 2rem 1.5rem;
+            }
+
+            .card h2 {
+                font-size: 1.9rem;
+            }
+
+            .card h3 {
+                font-size: 1.4rem;
+            }
+        }
+        .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.menu {
+    display: none;
+    flex-direction: column;
+    background: #264580;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  nav.menu a {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  nav.menu.active {
+    display: flex;
+  }
+}
+/* =========================
+   MENU IGUAL AO MODELO
+========================= */
+
+nav.menu {
+    background: #264580;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* LINKS DO MENU */
+nav.menu a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+/* HOVER */
+nav.menu a:hover {
+    color: #d4af37;
+}
+
+/* LINK ESTUDOS */
+.nav-estudos {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+    nav.menu {
+        padding: 0.5rem;
+    }
+
+    nav.menu a {
+        display: block;
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+}
+/* TRANSIÇÃO SUAVE DO HEADER */
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* ESCONDE HEADER TOP AO ROLAR */
+.header-top.shrink {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.logo-topo img {
+    transition: all 0.3s ease;
+}
+
+.header-top.shrink .logo-topo img {
+    max-height: 0;
+}
+
+/* HEADER FIXO (sempre visível) */
+.header-fixed {
+    display: flex;
+    flex-direction: column; /* título em cima, menu embaixo */
+    align-items: center;
+    justify-content: center;
+    background: #264580;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem; /* espaçamento entre título e nav */
+}
+
+/* MENU FIXO DESKTOP */
+.header-fixed nav.menu {
+    width: 100%; /* ocupa toda largura */
+    display: flex;
+    flex-wrap: wrap; /* permite quebra de linha se necessário */
+    justify-content: center; /* centraliza os links */
+    margin-top: 0.5rem;
+}
+/* MENU FIXO MOBILE */
+@media (max-width: 768px) {
+    .header-fixed nav.menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .header-fixed nav.menu.active {
+        display: flex;
+    }
+}
+.logo-topo.scrolled img {
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+    </style>
+</head>
+
+<body>
+
+<header>
+  <!-- LINHA DO TOPO (logo que desaparece ao rolar) -->
+  <div class="header-top">
+    <div class="logo-topo">
+      <a href="index.html">
+        <img src="imagens/logo-topo.gif" alt="Orações Católicas e Novenas">
+      </a>
+    </div>
+  </div>
+
+  <!-- LINHA FIXA (sempre visível: título + menu/hambúrguer) -->
+  <div class="header-fixed">
+    <h1 class="titulo-pagina">Politica de Privacidade</h1>
+
+    <!-- BOTÃO MENU MOBILE -->
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="oracoes.html">Orações</a>
+      <a href="novena.html">Novenas</a>
+      <a href="testemunhos.html">Testemunhos</a>
+      <a href="/index.html#minuto-sabedoria"
+         style="
+         margin:0 15px;
+         text-decoration:none;
+         font-weight:600;
+         background: linear-gradient(180deg, #fff2b0, #d4af37, #b8962e);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         text-shadow: 0 0 4px rgba(212,175,55,0.4);
+         ">
+         ✨ Minuto de Sabedoria ✨
+      </a>
+      <a href="contato.html">Contato</a>
+      <a href="o-poder-da-oracao-na-vida-catolica.html" class="nav-estudos">Estudos e Reflexões</a>
+      <a href="faq.html">FAQ</a> 
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+    <section class="card">
+
+        <h2>Política de Privacidade</h2>
+
+        <p>
+            O site <strong>Orações Católicas e Novenas</strong> respeita a sua privacidade
+            e está comprometido em proteger todas as informações pessoais dos usuários,
+            em conformidade com a Lei Geral de Proteção de Dados (LGPD).
+        </p>
+
+        <h3>Coleta de Informações</h3>
+        <p>
+            Coletamos informações fornecidas voluntariamente pelo usuário,
+            como nome, e-mail e pedidos de oração, por meio de formulários disponíveis no site.
+            Esses dados são utilizados exclusivamente para comunicação,
+            resposta aos pedidos enviados e fins espirituais.
+        </p>
+
+        <p>
+            Também coletamos informações técnicas automaticamente,
+            como endereço IP, tipo de navegador, dispositivo utilizado,
+            páginas acessadas e tempo de permanência,
+            com o objetivo de melhorar a experiência do usuário e a segurança do site.
+        </p>
+
+        <h3>Uso de Cookies</h3>
+        <p>
+            Este site utiliza cookies para armazenar preferências dos visitantes
+            e otimizar a navegação.
+            Cookies são pequenos arquivos armazenados no navegador do usuário
+            e podem ser desativados a qualquer momento nas configurações do navegador.
+        </p>
+
+        <h3>Google AdSense</h3>
+        <p>
+            Utilizamos o serviço de publicidade <strong>Google AdSense</strong>,
+            que emprega cookies (incluindo o cookie DoubleClick)
+            para exibir anúncios relevantes com base em visitas anteriores.
+        </p>
+
+        <p>
+            O Google pode usar esses dados para personalizar anúncios.
+            O usuário pode desativar a publicidade personalizada
+            nas configurações de anúncios do Google.
+        </p>
+
+        <h3>Compartilhamento de Dados</h3>
+        <p>
+            O site <strong>Orações Católicas e Novenas</strong> não vende,
+            não aluga e não compartilha dados pessoais com terceiros,
+            exceto quando necessário para funcionamento de serviços essenciais,
+            como plataformas de e-mail e publicidade.
+        </p>
+
+        <h3>Consentimento</h3>
+        <p>
+            Ao utilizar este site, o usuário declara estar ciente
+            e de acordo com esta Política de Privacidade
+            e com o uso de cookies e tecnologias semelhantes.
+        </p>
+
+        <h3>Alterações</h3>
+        <p>
+            Esta Política de Privacidade pode ser atualizada a qualquer momento,
+            sem aviso prévio.
+            Recomendamos que o usuário revise esta página periodicamente.
+        </p>
+
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Orações Católicas e Novenas. Todos os direitos reservados.</p>
+
+        <div class="social-links">
+    <a href="https://www.youtube.com/@Ora%C3%A7%C3%B5esCat%C3%B3licasENovenas" target="_blank" aria-label="YouTube">
+        <img src="imagens/logoyoutube.png" alt="YouTube" class="logo-youtube">
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=61585771315343&locale=pt_BR" target="_blank" aria-label="Facebook">
+        <img src="imagens/logofacebook.png" alt="Facebook" class="logo-facebook">
+    </a>
+</div>
+
+        <p>
+            <a href="politica-de-privacidade.html">Política de Privacidade</a> |
+            <a href="termos-de-uso.html">Termos de Uso</a> |
+            <a href="sobre.html">Sobre Nós</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.header-fixed .menu-toggle');
+  const menu = document.querySelector('.header-fixed nav.menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active'); // abre e fecha
+  });
+
+  // Fecha ao clicar em algum link do menu (mobile)
+  document.querySelectorAll('.header-fixed nav.menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+      }
+    });
+  });
+
+  const headerTop = document.querySelector('.logo-topo');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) { // quando rolar mais de 50px
+      headerTop.classList.add('scrolled');
+    } else {
+      headerTop.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>
